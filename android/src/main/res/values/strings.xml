@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bsft_inbox_delete_failure_message">Delete message failed, try again later.</string>
+</resources>
