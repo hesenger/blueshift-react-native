@@ -95,6 +95,16 @@ RCT_EXPORT_METHOD(displayInAppNotification) {
 }
 
 #pragma mark Setters
+RCT_EXPORT_METHOD(init:(NSString *)apiKey) {
+  BlueShiftConfig *config = [[BlueShiftConfig alloc] init];
+  config.apiKey = apiKey;
+  // config.applicationLaunchOptions = launchOptions;
+  config.enablePushNotification = YES;
+  config.userNotificationDelegate = self;
+
+  [[BlueshiftPluginManager sharedInstance] initialisePluginWithConfig:config autoIntegrate:YES];
+}
+
 RCT_EXPORT_METHOD(setUserInfoEmailId:(NSString *)emailId) {
     if ([emailId isKindOfClass:[NSString class]]) {
         [[BlueShiftUserInfo sharedInstance] setEmail:emailId];

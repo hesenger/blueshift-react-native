@@ -73,7 +73,12 @@ public class BlueshiftReactNativeModule extends ReactContextBaseJavaModule {
     // INITIALIZE
 
     @ReactMethod
-    void init() {
+    void init(String apiKey) {
+        Configuration configuration = new Configuration();
+        configuration.setApiKey(apiKey);
+        configuration.setDeviceIdSource(Blueshift.DeviceIdSource.INSTANCE_ID_PKG_NAME);
+        Blueshift.getInstance(getReactApplicationContext()).initialize(configuration);
+
         BlueshiftReactNativeEventHandler.getInstance().initEventEmitter(getReactApplicationContext());
         BlueshiftReactNativeEventHandler.getInstance().fireEvent("url");
     }
