@@ -20,10 +20,8 @@ const Blueshift = {
    * Blueshift.init();
    *
    */
-  init: function () {
-    if (Platform.OS === 'android') {
-      NativeModules.BlueshiftBridge.init();
-    }
+  init: function (apiKey) {
+    NativeModules.BlueshiftBridge.init(apiKey);
   },
 
   /**
