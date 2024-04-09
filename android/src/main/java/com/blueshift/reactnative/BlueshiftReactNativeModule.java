@@ -16,6 +16,7 @@ import com.blueshift.BlueshiftLogger;
 import com.blueshift.inappmessage.InAppManager;
 import com.blueshift.inbox.BlueshiftInboxManager;
 import com.blueshift.inbox.BlueshiftInboxMessage;
+import com.blueshift.model.Configuration;
 import com.blueshift.model.UserInfo;
 import com.blueshift.util.DeviceUtils;
 import com.facebook.react.bridge.Callback;
